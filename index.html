@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You, My Love 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="hearts-bg" aria-hidden="true"></div>
+  <div class="sparkles" aria-hidden="true"></div>
+
+  <!-- LOGIN -->
+  <section id="login-screen" class="screen active">
+    <div class="login-card">
+      <div class="photo-frame">
+        <img id="login-photo" src="pictures/photo.jpg" alt="Our beautiful memory">
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="login-body">
+        <h1 class="script-title">Happy Birthday</h1>
+        <p class="subtitle">My Forever Love</p>
+        <form id="login-form">
+          <label for="password" class="input-label">Enter the secret year</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="••••"
+            autocomplete="off"
+            maxlength="10"
+          >
+          <p id="login-error" class="error-msg" hidden>Wrong password, try again 💔</p>
+          <button type="submit" class="btn btn-diller">
+            <span class="btn-heart">♥</span> Dil Se Enter
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN MENU -->
+  <section id="main-screen" class="screen">
+    <div class="main-content">
+      <h2 class="script-title fade-in">Choose Your Gift</h2>
+      <p class="subtitle fade-in delay-1">Something special, just for you...</p>
+      <div class="gift-buttons fade-in delay-2">
+        <button class="gift-btn letter-btn" id="open-letter">
+          <span class="gift-icon">💌</span>
+          <span class="gift-label">Letter</span>
+        </button>
+        <button class="gift-btn surprise-btn" id="open-surprise">
+          <span class="gift-icon">🎁</span>
+          <span class="gift-label">Surprise</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LETTER MODAL -->
+  <div id="letter-modal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-card letter-card">
+      <button class="close-btn" data-close="letter-modal" aria-label="Close">&times;</button>
+      <div class="letter-envelope-top"></div>
+      <div class="letter-content">
+        <p class="letter-date">28 June 2026</p>
+        <h3 class="letter-heading">My Dearest Love,</h3>
+        <p>
+          On this beautiful day, I want you to know that every moment with you
+          feels like a dream I never want to wake up from. You are the melody
+          in my silence, the warmth in my coldest days, and the reason my heart
+          beats with so much joy.
+        </p>
+        <p>
+          Thank you for being my partner, my best friend, and the most
+          beautiful chapter of my life. Today we celebrate you — your smile,
+          your kindness, your strength, and the magic you bring into everything
+          you touch.
+        </p>
+        <p>
+          I promise to keep choosing you, every single day, in every season of
+          our life together. Happy Birthday, my love. May this year bring you
+          endless happiness, laughter, and all the love you deserve.
+        </p>
+        <p class="letter-sign">Forever Yours,<br><span class="script-title small">With All My Heart</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SURPRISE MODAL -->
+  <div id="surprise-modal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-card surprise-card">
+      <button class="close-btn" data-close="surprise-modal" aria-label="Close">&times;</button>
+      <div class="surprise-sparkle">✨</div>
+      <h3 class="surprise-title">A Little Secret...</h3>
+      <p class="surprise-text">
+        Something very special is being prepared just for you.
+        Every detail, every surprise, every moment — it's all because
+        you mean the world to me.
+      </p>
+      <p class="surprise-text highlight">
+        Patience, my love... the best is yet to come. 💕
+      </p>
+      <button class="btn btn-wait" disabled tabindex="-1">Just Wait</button>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

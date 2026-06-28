@@ -6,21 +6,22 @@ const loginForm = document.getElementById('login-form');
 const passwordInput = document.getElementById('password');
 const loginError = document.getElementById('login-error');
 const loginPhoto = document.getElementById('login-photo');
+const waitPhoto = document.getElementById('wait-photo');
 
 const letterModal = document.getElementById('letter-modal');
 const surpriseModal = document.getElementById('surprise-modal');
+const waitModal = document.getElementById('wait-modal');
 
-// Fallback if picture not found
-loginPhoto.addEventListener('error', () => {
-  loginPhoto.style.display = 'none';
-  loginPhoto.parentElement.style.background =
-    "linear-gradient(160deg, #ffb3c1, #ff4d6d) url('data:image/svg+xml," +
-    encodeURIComponent(
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">' +
-      '<text y="55" x="50" text-anchor="middle" font-size="40">💕</text></svg>'
-    ) +
-    "') center/80px no-repeat";
-});
+function setPhotoFallback(img) {
+  img.addEventListener('error', () => {
+    img.style.display = 'none';
+    img.parentElement.style.background =
+      "linear-gradient(160deg, #ffb3c1, #ff4d6d) center/cover";
+  });
+}
+
+setPhotoFallback(loginPhoto);
+setPhotoFallback(waitPhoto);
 
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -49,10 +50,14 @@ document.getElementById('open-surprise').addEventListener('click', () => {
   document.body.style.overflow = 'hidden';
 });
 
+document.getElementById('open-wait-card').addEventListener('click', () => {
+  surpriseModal.hidden = true;
+  waitModal.hidden = false;
+});
+
 document.querySelectorAll('.close-btn').forEach((btn) => {
   btn.addEventListener('click', () => {
-    const modalId = btn.dataset.close;
-    document.getElementById(modalId).hidden = true;
+    document.getElementById(btn.dataset.close).hidden = true;
     document.body.style.overflow = '';
   });
 });
